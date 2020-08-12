@@ -1,5 +1,5 @@
 # data-structure
-The learning materials of the data structure, using python development
+
 
 ### Linked list
 [Linked list(鏈結串列)](https://github.com/pili2026/data-structure/blob/master/link_list.py)是一種常見的資料結構，其使用**node**(**節點**)來記錄、表示、儲存資料(data)，並利用每個**node**中的**pointer**指向下一個**node**，藉此將多個**node**串連起來，形成**Linked list**，並以<font color="#dd0000">NULL</font>來代表Linked list的終點。
@@ -274,6 +274,7 @@ D已經進行過Visiting，便標上數字「1」，表示D為post-order travers
 列出F後，發現C的right child指向NULL，於是略過right child(R)，回到C(V)，並對C進行Visiting，標上數字。
 
 ![](https://i.imgur.com/UUAIsoh.png)![](https://i.imgur.com/Jq8671Z.png)
+
 圖一(i)-(j)：scope內：C(V)、F(L)。
 最後回到「以A為CurrentNode」的scope，對A(V)進行Visiting，便完成了此次post-order traversal，並依序印出`D E B F C A`。
 
