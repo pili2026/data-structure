@@ -220,13 +220,14 @@ Binary Tree的Node具有兩個指向child的pointer，traversal以「當前所�
 
 
 一開始，CurrentNode進到A(root)，按照post-order的順序規則(LRV)，先檢查left child：B是否為NULL，若不是，則先將CurrentNode移動到B(L)：
+
 ![](https://i.imgur.com/R404fXn.png)
 <center>
 圖一(b)：scope內：A(V)、B(L)、C( R )。
 </center>
 
-
 當CurrentNode移動到B，再一次執行post-order的順序規則(LRV)，檢查left child：D是否為NULL，若不是，則將CurrentNode移動到D(L)：
+
 ![](https://i.imgur.com/FOsHBap.png)
 <center>
 圖一(c)：scope內：B(V)、D(L)、E(R)。
@@ -235,8 +236,7 @@ Binary Tree的Node具有兩個指向child的pointer，traversal以「當前所�
 
 接著，由於「以D為CurrentNode」形成的scope內之node已經全數Visiting完畢，便可回到「以D之parent作為CurrentNode之scope」，於是將CurrentNode移回B。
 
-回到B的動作發生，即表示：以D為CurrentNode之迴圈或函式已經結
-束。
+回到B的動作發生，即表示：以D為CurrentNode之迴圈或函式已經結束。
 ![](https://i.imgur.com/7HHrzZZ.png)
 <center>
 圖一(d)：scope內：D(V)。
@@ -248,10 +248,12 @@ D已經進行過Visiting，便標上數字「1」，表示D為post-order travers
 <center>
 圖一(e)：scope內：B(V)、D(L)、E(R)。
 </center>
+
 進入E後，因為E為leaf node，因此過程如圖一(d)，不會進入NULL。
 在D(L)與E( R )都Visiting過後，便回到B(V)進行Visiting，並標上數字。如此便完成「以B為CurrentNode之scope」內的所有node之Visiting。
 
 接著回到「以A為CurrentNode」的scope。
+
 ![](https://i.imgur.com/NgCflB7.png) 
 <center>
 圖一(f)：scope內：B(V)、D(L)、E( R )。
@@ -276,6 +278,7 @@ D已經進行過Visiting，便標上數字「1」，表示D為post-order travers
 ![](https://i.imgur.com/UUAIsoh.png)![](https://i.imgur.com/Jq8671Z.png)
 
 圖一(i)-(j)：scope內：C(V)、F(L)。
+
 最後回到「以A為CurrentNode」的scope，對A(V)進行Visiting，便完成了此次post-order traversal，並依序印出`D E B F C A`。
 
 ![](https://i.imgur.com/Aqfw3hM.png)![](https://i.imgur.com/l0xcWuP.png)
